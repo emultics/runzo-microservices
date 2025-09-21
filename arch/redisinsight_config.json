@@ -1,0 +1,9 @@
+{
+  "connections": [
+    {
+      "name": "Runzo-Redis",
+      "host": "runzo-redis",
+      "port": 6379
+    }
+  ]
+}

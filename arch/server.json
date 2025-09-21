@@ -1,0 +1,31 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Runzo-UserDB",
+      "Group": "Runzo",
+      "Host": "runzo-postgres-user",
+      "Port": 5432,
+      "MaintenanceDB": "userdb",
+      "Username": "useradmin",
+      "SSLMode": "prefer"
+    },
+    "2": {
+      "Name": "Runzo-ActivityDB",
+      "Group": "Runzo",
+      "Host": "runzo-postgres-activity",
+      "Port": 5432,
+      "MaintenanceDB": "activitydb",
+      "Username": "activityadmin",
+      "SSLMode": "prefer"
+    },
+    "3": {
+      "Name": "Runzo-ALServiceDB",
+      "Group": "Runzo",
+      "Host": "runzo-postgres-alservice",
+      "Port": 5432,
+      "MaintenanceDB": "alservicedb",
+      "Username": "alserviceadmin",
+      "SSLMode": "prefer"
+    }
+  }
+}
