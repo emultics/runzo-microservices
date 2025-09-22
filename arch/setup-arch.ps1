@@ -24,7 +24,6 @@ function Log {
 function Install-Docker{
     param ([string]$OS)
     if($OS -eq "Windows"){
-<<<<<<< HEAD
         Log "Installing Docker desktop for windows..."
         $dockerInstallerUrl = "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe"
         $installerPath = "$env:TEMP\DockerDesktopInstaller.exe"
