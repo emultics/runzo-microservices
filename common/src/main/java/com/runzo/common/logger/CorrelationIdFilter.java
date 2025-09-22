@@ -41,5 +41,6 @@ public class CorrelationIdFilter extends OncePerRequestFilter {
         byteBuffer.putLong(uuid.getMostSignificantBits());
         byteBuffer.putLong(uuid.getLeastSignificantBits());
         return Base64.getUrlEncoder().withoutPadding().encodeToString(byteBuffer.array());
+
     }
 }
