@@ -1,10 +1,11 @@
 package com.runzo.common.crypto;
-
 import com.runzo.common.crypto.factory.CryptoFactory;
 import com.runzo.common.crypto.strategy.AesCryptoStrategy;
 import com.runzo.common.crypto.strategy.CryptoStrategy;
 import com.runzo.common.crypto.strategy.CryptoType;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CryptoProcessor implements CryptoService{
     private final CryptoStrategy strategy;
 

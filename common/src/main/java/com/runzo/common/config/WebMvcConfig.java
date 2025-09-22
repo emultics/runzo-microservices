@@ -1,5 +1,6 @@
 package com.runzo.common.config;
 
+import com.runzo.common.exceptions.handler.GlobalExceptionHandler;
 import com.runzo.common.logger.CorrelationIdFilter;
 import com.runzo.common.logger.LoggingInterceptor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -18,6 +19,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Bean
     public LoggingInterceptor loggingInterceptor() {
         return new LoggingInterceptor();
+    }
+
+    @Bean
+    public GlobalExceptionHandler globalExceptionHandler(){
+        return new GlobalExceptionHandler();
     }
 
     @Bean
