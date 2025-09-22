@@ -6,6 +6,7 @@ import com.runzo.common.crypto.strategy.CryptoStrategy;
 import com.runzo.common.crypto.strategy.CryptoType;
 
 public class CryptoFactory {
+
     public static CryptoStrategy getStrategy(CryptoType cryptoType, String secretKey){
         switch (cryptoType){
             case BCRYPT -> {
