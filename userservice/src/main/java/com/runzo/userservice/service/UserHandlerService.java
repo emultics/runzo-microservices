@@ -20,26 +20,5 @@ public class UserHandlerService {
         return ApiResponse.success(user, "User created!");
     }
 
-    public ApiResponse<?> getProfileById(String id){
-        User user = service.getUserById(id);
-        return ApiResponse.success(user, "User profile fetched");
-    }
-
-    public ApiResponse<?> getProfileByEmail(String email){
-        User user = service.getProfileByEmail(email);
-        return ApiResponse.success(user, "User profile fetched");
-    }
-
-    public ApiResponse<?> getProfileByPhone(String phone){
-        if(phone == null || phone.isBlank()){
-            throw new RuntimeException("Phone is required!");
-        }
-        User user = service.getUserByPhone(phone);
-        return ApiResponse.success(user, "User profile fetched");
-    }
-
-
-
-
 
 }
