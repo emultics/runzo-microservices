@@ -1,6 +1,7 @@
 package com.runzo.userservice.service;
 
 import com.runzo.common.exceptions.ex.UserAlreadyExistException;
+import com.runzo.common.exceptions.ex.UserNotFoundException;
 import com.runzo.userservice.dto.RegisterRequest;
 import com.runzo.userservice.entity.User;
 import com.runzo.userservice.repository.UserRepository;
@@ -8,6 +9,8 @@ import com.runzo.userservice.utils.CryptoManager;
 import com.runzo.userservice.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 class UserServiceImpl implements UserService {
@@ -38,4 +41,22 @@ class UserServiceImpl implements UserService {
         }
 
     }
+
+    @Override
+    public User getProfileByEmail(String email){
+        return userRepository.findByEmail(email)
+                .orElseThrow(()-> new UserNotFoundException("User not found! with this email: "+email));
+    }
+
+    @Override
+    public User getUserById(String id){
+        return userRepository.findById(id).orElseThrow(()-> new UserNotFoundException("User not found!"));
+
+    }
+    @Override
+    public User getUserByPhone(String phone){
+        return userRepository.findByPhone(phone).orElseThrow(()-> new UserNotFoundException("User not found! with this phone: "+phone));
+    }
+
+
 }
