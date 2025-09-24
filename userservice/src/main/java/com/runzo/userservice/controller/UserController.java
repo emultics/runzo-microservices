@@ -32,9 +32,9 @@ public class UserController {
 
     @GetMapping("/search")
     public ResponseEntity<?> getUser(
-            @RequestParam(required = false) String id,
-            @RequestParam(required = false) String email,
-            @RequestParam(required = false) String phone
+            @RequestParam(required = false,name = "id") String id,
+            @RequestParam(required = false, name = "email") String email,
+            @RequestParam(required = false, name = "phone") String phone
     ){
         if(id!=null){
             ApiResponse<?> response = service.getProfileById(id);
@@ -54,6 +54,13 @@ public class UserController {
 
         return ResponseEntity.badRequest()
                 .body(ApiResponse.error("Please provide either id, phone, or email", HttpStatus.BAD_REQUEST));
+    }
+
+
+    @GetMapping("{userId}/validate")
+    public ResponseEntity<?> checkUserExistOrNot(@PathVariable("userId") String userId){
+        ApiResponse<?> response = service.isUserExist(userId);
+        return buildResponse(response);
     }
 
 

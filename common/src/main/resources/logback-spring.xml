@@ -8,7 +8,7 @@
 <configuration>
 
     <!-- Properties -->
-    <property name="APP_NAME" value="runzo-user-service" />
+    <property name="APP_NAME" value="spring.application.name" />
     <property name="LOG_DIR" value="logs" />
     <property name="LOG_FILE" value="${LOG_DIR}/${APP_NAME}.log" />
     <property name="ERROR_LOG_FILE" value="${LOG_DIR}/${APP_NAME}-error.log" />

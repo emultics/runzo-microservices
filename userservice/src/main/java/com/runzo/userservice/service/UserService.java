@@ -10,5 +10,6 @@ interface UserService {
     public User getProfileByEmail(String email);
     public User getUserById(String id);
     public User getUserByPhone(String phone);
+    public boolean isUserExist(String userId);
 
 }

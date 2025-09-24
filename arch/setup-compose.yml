@@ -50,17 +50,36 @@ services:
     volumes:
       - runzo_user_data:/var/lib/postgresql/data
 
-  runzo-postgres-activity:
-    image: postgres:15
-    container_name: runzo-postgres-activity
+  runzo-mongo-activity:
+    image: mongo:6.0
+    container_name: runzo-mongo-activity
     environment:
-      POSTGRES_DB: ${ACTIVITY_DB}
-      POSTGRES_USER: ${ACTIVITY_USER}
-      POSTGRES_PASSWORD: ${ACTIVITY_PASS}
+      MONGO_INITDB_ROOT_USERNAME: ${ACTIVITY_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${ACTIVITY_PASS}
+      MONGO_INITDB_DATABASE: ${ACTIVITY_DB}
     ports:
-      - "${ACTIVITY_PORT}:5432"
+      - "${ACTIVITY_PORT}:27017"
     volumes:
-      - runzo_activity_data:/var/lib/postgresql/data
+      - runzo_activity_data:/data/db
+
+  runzo-mongo-express:
+    image: mongo-express:latest
+    container_name: runzo-mongo-express
+    restart: always
+    ports:
+      - "${ACTIVITY_UI_PORT}:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${ACTIVITY_USER}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${ACTIVITY_PASS}
+      ME_CONFIG_MONGODB_AUTH_DATABASE: admin
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: true
+      ME_CONFIG_BASICAUTH_USERNAME: ${MONGOEXPRESS_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGOEXPRESS_PASSWORD}
+      ME_CONFIG_MONGODB_SERVER: runzo-mongo-activity
+    volumes:
+      - runzo_activity_data:/data/db
+    depends_on:
+      - runzo-mongo-activity
 
   runzo-postgres-alservice:
     image: postgres:15
@@ -83,10 +102,9 @@ services:
     ports:
       - "${PGADMIN_PORT}:80"
     volumes:
-      - ./servers.json:/pgadmin4/servers.json
+      - ./server.json:/pgadmin4/server.json
     depends_on:
       - runzo-postgres-user
-      - runzo-postgres-activity
       - runzo-postgres-alservice
 
   runzo-redis:
