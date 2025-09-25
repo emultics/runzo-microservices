@@ -5,9 +5,12 @@ import com.runzo.activityservice.service.ActivityHandlerService;
 import com.runzo.common.response.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.apache.kafka.shaded.com.google.protobuf.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/activities")
@@ -33,6 +36,12 @@ public class ActivityController {
             return ResponseEntity.ok(response);
         }
         return ResponseEntity.status(response.getErrorCode()).body(response);
+    }
+
+    @GetMapping("/search/user/{userId}/history")
+    public ResponseEntity<?> getHistoryActivitiesByUserId(@PathVariable("userId") String userId){
+        ApiResponse<?> response = activityHandlerService.getHistoryActivitiesByUserId(userId);
+        return ApiResponse.buildResponse(response);
     }
 
 }

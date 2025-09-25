@@ -4,6 +4,7 @@ import com.runzo.common.constant.CommonConstant;
 import lombok.Data;
 import org.slf4j.MDC;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
 
@@ -59,5 +60,12 @@ public class ApiResponse<T>{
     }
     public static <T> ApiResponse<T> error(T data, String message, HttpStatus httpStatus) {
         return new ApiResponse<>(data, message, httpStatus);
+    }
+
+    public static ResponseEntity<ApiResponse<?>> buildResponse(ApiResponse<?> response){
+        if(response.isSuccess()){
+            return ResponseEntity.ok(response);
+        }
+        return ResponseEntity.status(response.getErrorCode()).body(response);
     }
 }

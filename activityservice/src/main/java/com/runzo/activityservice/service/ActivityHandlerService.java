@@ -6,6 +6,8 @@ import com.runzo.common.response.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ActivityHandlerService {
     @Autowired
@@ -26,5 +28,14 @@ public class ActivityHandlerService {
         }
         ActivityResponse response = activityService.getActivityById(activityId);
         return ApiResponse.success(response, "fetched activity successfully");
+    }
+
+    public ApiResponse<List<?>> getHistoryActivitiesByUserId(String userId){
+        if(userId==null) {
+            throw new RuntimeException("userId is required!");
+        }
+
+        List<ActivityResponse> activityResponses = activityService.getHistoryActivitiesByUserId(userId);
+        return ApiResponse.success(activityResponses, "Fetched activities history!");
     }
 }
