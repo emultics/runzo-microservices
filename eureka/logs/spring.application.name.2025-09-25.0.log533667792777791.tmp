@@ -1,0 +1,145 @@
+2025-09-26T00:02:24.538+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:07:24.548+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:10:58.677+0530 [http-nio-8082-exec-7] INFO  [::] c.r.a.service.UserValidationService - Incoming request: POST /api/activities | runzo-cor-Id: null
+2025-09-26T00:10:58.788+0530 [http-nio-8082-exec-7] INFO  [::] c.r.a.service.UserValidationService - Publishing event: {"activity":{"user_id":"2db04f54-0779-489c-a60e-00dbc26cea0a","type":"RUN","duration":165,"calories":350.5,"distance_km":5.2,"start_time":"2025-09-24T04:30:00","end_time":"2025-09-24T07:15:00","additional_metrics":{"heart_rate_avg":120,"steps":6000,"weather":"sunny"},"created_at":"2025-09-26T00:10:58.772639","updated_at":"2025-09-26T00:10:58.772639","id":"68d58cba2da1a8283223b4da"},"action":"CREATE","time_stamp":"2025-09-26T00:10:58.787574"}
+2025-09-26T00:10:58.794+0530 [http-nio-8082-exec-7] INFO  [::] o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = activityservice-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-09-26T00:10:58.805+0530 [http-nio-8082-exec-7] INFO  [::] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-09-26T00:10:58.808+0530 [http-nio-8082-exec-7] INFO  [::] o.a.k.clients.producer.KafkaProducer - [Producer clientId=activityservice-producer-1] Instantiated an idempotent producer.
+2025-09-26T00:10:58.815+0530 [http-nio-8082-exec-7] INFO  [::] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.2
+2025-09-26T00:10:58.815+0530 [http-nio-8082-exec-7] INFO  [::] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 79a8f2b5f44f9d5a
+2025-09-26T00:10:58.815+0530 [http-nio-8082-exec-7] INFO  [::] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1758825658815
+2025-09-26T00:10:58.822+0530 [kafka-producer-network-thread | activityservice-producer-1] INFO  [::] org.apache.kafka.clients.Metadata - [Producer clientId=activityservice-producer-1] Cluster ID: Q1aY-gBtSYeafGotanyWxQ
+2025-09-26T00:10:58.822+0530 [kafka-producer-network-thread | activityservice-producer-1] INFO  [::] o.a.k.c.p.i.TransactionManager - [Producer clientId=activityservice-producer-1] ProducerId set to 1002 with epoch 0
+2025-09-26T00:10:58.826+0530 [http-nio-8082-exec-7] INFO  [::] c.r.a.service.UserValidationService - Response Status: 200 for /api/activities | runzo-cor-Id: e_VlXkQyTdG-DFueh1kFPQ
+2025-09-26T00:12:24.556+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:17:24.561+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:19:58.843+0530 [kafka-producer-network-thread | activityservice-producer-1] INFO  [::] o.apache.kafka.clients.NetworkClient - [Producer clientId=activityservice-producer-1] Node -1 disconnected.
+2025-09-26T00:22:24.564+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:27:24.573+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:29:58.847+0530 [kafka-producer-network-thread | activityservice-producer-1] INFO  [::] o.apache.kafka.clients.NetworkClient - [Producer clientId=activityservice-producer-1] Node -1 disconnected.
+2025-09-26T00:32:24.584+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:36:46.612+0530 [http-nio-8082-exec-9] INFO  [::] c.r.a.service.UserValidationService - Incoming request: POST /api/activities | runzo-cor-Id: null
+2025-09-26T00:36:46.653+0530 [http-nio-8082-exec-9] INFO  [::] c.r.a.service.UserValidationService - Publishing event: {"activity":{"user_id":"2db04f54-0779-489c-a60e-00dbc26cea0a","type":"RUN","duration":165,"calories":350.5,"distance_km":5.2,"start_time":"2025-09-24T04:30:00","end_time":"2025-09-24T07:15:00","additional_metrics":{"heart_rate_avg":120,"steps":6000,"weather":"sunny"},"created_at":"2025-09-26T00:36:46.649159","updated_at":"2025-09-26T00:36:46.649159","id":"68d592c62da1a8283223b4db"},"action":"CREATE","time_stamp":"2025-09-26T00:36:46.652435"}
+2025-09-26T00:36:46.664+0530 [http-nio-8082-exec-9] INFO  [::] c.r.a.service.UserValidationService - Response Status: 200 for /api/activities | runzo-cor-Id: kmMPh_oDTEWcJaLUdfJHSw
+2025-09-26T00:37:24.588+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:42:24.593+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:42:33.981+0530 [http-nio-8082-exec-3] INFO  [::] c.r.a.service.UserValidationService - Incoming request: POST /api/activities | runzo-cor-Id: null
+2025-09-26T00:42:34.039+0530 [http-nio-8082-exec-3] INFO  [::] c.r.a.service.UserValidationService - Publishing event: {"activity":{"user_id":"2db04f54-0779-489c-a60e-00dbc26cea0a","type":"RUN","duration":165,"calories":350.5,"distance_km":5.2,"start_time":"2025-09-24T04:30:00","end_time":"2025-09-24T07:15:00","additional_metrics":{"heart_rate_avg":120,"steps":6000,"weather":"sunny"},"created_at":"2025-09-26T00:42:34.036144","updated_at":"2025-09-26T00:42:34.036144","id":"68d594222da1a8283223b4dc"},"action":"CREATE","time_stamp":"2025-09-26T00:42:34.039466"}
+2025-09-26T00:42:34.041+0530 [http-nio-8082-exec-3] INFO  [::] c.r.a.service.UserValidationService - Response Status: 200 for /api/activities | runzo-cor-Id: DRC8zUlmQJGUrfu1gXiRlA
+2025-09-26T00:46:08.849+0530 [http-nio-8082-exec-6] INFO  [::] c.r.a.service.UserValidationService - Incoming request: POST /api/activities | runzo-cor-Id: null
+2025-09-26T00:46:08.903+0530 [http-nio-8082-exec-6] INFO  [::] c.r.a.service.UserValidationService - Publishing event: {"activity":{"user_id":"2db04f54-0779-489c-a60e-00dbc26cea0a","type":"RUN","duration":165,"calories":350.5,"distance_km":5.2,"start_time":"2025-09-24T04:30:00","end_time":"2025-09-24T07:15:00","additional_metrics":{"heart_rate_avg":120,"steps":6000,"weather":"sunny"},"created_at":"2025-09-26T00:46:08.897286","updated_at":"2025-09-26T00:46:08.897286","id":"68d594f82da1a8283223b4dd"},"action":"CREATE","time_stamp":"2025-09-26T00:46:08.902694"}
+2025-09-26T00:46:08.904+0530 [http-nio-8082-exec-6] INFO  [::] c.r.a.service.UserValidationService - Response Status: 200 for /api/activities | runzo-cor-Id: PvcMORxeTquDZP8jLrM71g
+2025-09-26T00:46:09.107+0530 [http-nio-8082-exec-7] INFO  [::] c.r.a.service.UserValidationService - Incoming request: GET /api/activities/search/user/2db04f54-0779-489c-a60e-00dbc26cea0a/history | runzo-cor-Id: null
+2025-09-26T00:46:09.119+0530 [http-nio-8082-exec-7] INFO  [::] c.r.a.service.UserValidationService - Response Status: 200 for /api/activities/search/user/2db04f54-0779-489c-a60e-00dbc26cea0a/history | runzo-cor-Id: JLGjFTKMShWs8xYLvfrIpw
+2025-09-26T00:47:24.603+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:49:04.872+0530 [http-nio-8082-exec-2] INFO  [::] c.r.a.service.UserValidationService - Incoming request: POST /api/activities | runzo-cor-Id: null
+2025-09-26T00:49:04.952+0530 [http-nio-8082-exec-2] INFO  [::] c.r.a.service.UserValidationService - Publishing event: {"activity":{"user_id":"2db04f54-0779-489c-a60e-00dbc26cea0a","type":"RUN","duration":165,"calories":350.5,"distance_km":5.2,"start_time":"2025-09-24T04:30:00","end_time":"2025-09-24T07:15:00","additional_metrics":{"heart_rate_avg":120,"steps":6000,"weather":"sunny"},"created_at":"2025-09-26T00:49:04.949463","updated_at":"2025-09-26T00:49:04.949463","id":"68d595a82da1a8283223b4de"},"action":"CREATE","time_stamp":"2025-09-26T00:49:04.952688"}
+2025-09-26T00:49:04.954+0530 [http-nio-8082-exec-2] INFO  [::] c.r.a.service.UserValidationService - Response Status: 200 for /api/activities | runzo-cor-Id: Pzkkci9SRwe49BCRVLq1KQ
+2025-09-26T00:50:13.549+0530 [http-nio-8082-exec-3] INFO  [::] c.r.a.service.UserValidationService - Incoming request: GET /api/activities/search/user/2db04f54-0779-489c-a60e-00dbc26cea0a/history | runzo-cor-Id: null
+2025-09-26T00:50:13.596+0530 [http-nio-8082-exec-3] INFO  [::] c.r.a.service.UserValidationService - Response Status: 200 for /api/activities/search/user/2db04f54-0779-489c-a60e-00dbc26cea0a/history | runzo-cor-Id: CEjNMIg1QGeZyh7ZRIJKqQ
+2025-09-26T00:52:24.606+0530 [AsyncResolver-bootstrap-executor-%d] INFO  [::] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-09-26T00:52:47.898+0530 [SpringApplicationShutdownHook] INFO  [::] o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application ACTIVITYSERVICE with eureka with status DOWN
+2025-09-26T00:52:47.898+0530 [SpringApplicationShutdownHook] INFO  [::] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1758828167898, current=DOWN, previous=UP]
+2025-09-26T00:52:47.898+0530 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  [::] c.netflix.discovery.DiscoveryClient - DiscoveryClient_ACTIVITYSERVICE/192.168.31.105:activityservice:8082: registering service...
+2025-09-26T00:52:47.906+0530 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  [::] c.netflix.discovery.DiscoveryClient - DiscoveryClient_ACTIVITYSERVICE/192.168.31.105:activityservice:8082 - registration status: 204
+2025-09-26T00:52:49.991+0530 [SpringApplicationShutdownHook] INFO  [::] o.a.k.clients.producer.KafkaProducer - [Producer clientId=activityservice-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-09-26T00:52:50.008+0530 [SpringApplicationShutdownHook] INFO  [::] o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-09-26T00:52:50.008+0530 [SpringApplicationShutdownHook] INFO  [::] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-09-26T00:52:50.008+0530 [SpringApplicationShutdownHook] INFO  [::] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-09-26T00:52:50.008+0530 [SpringApplicationShutdownHook] INFO  [::] o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-09-26T00:52:50.009+0530 [SpringApplicationShutdownHook] INFO  [::] o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for activityservice-producer-1 unregistered
+2025-09-26T00:52:50.018+0530 [SpringApplicationShutdownHook] INFO  [::] c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-09-26T00:52:53.024+0530 [SpringApplicationShutdownHook] INFO  [::] c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-09-26T00:52:53.032+0530 [SpringApplicationShutdownHook] INFO  [::] c.netflix.discovery.DiscoveryClient - DiscoveryClient_ACTIVITYSERVICE/192.168.31.105:activityservice:8082 - deregister  status: 200
+2025-09-26T00:52:53.032+0530 [SpringApplicationShutdownHook] INFO  [::] c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

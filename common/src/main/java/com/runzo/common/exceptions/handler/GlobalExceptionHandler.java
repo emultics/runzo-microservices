@@ -1,6 +1,7 @@
 package com.runzo.common.exceptions.handler;
 
 import com.runzo.common.constant.CommonConstant;
+import com.runzo.common.exceptions.ex.ActivityNotFoundException;
 import com.runzo.common.exceptions.ex.UserAlreadyExistException;
 import com.runzo.common.exceptions.ex.UserNotFoundException;
 import com.runzo.common.response.ApiResponse;
@@ -25,6 +26,12 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<ApiResponse<Object>> userNotFoundException(UserNotFoundException ex){
+        ApiResponse<Object> response = ApiResponse.error(ex.getMessage(), HttpStatus.NOT_FOUND);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+    }
+
+    @ExceptionHandler(ActivityNotFoundException.class)
+    public ResponseEntity<ApiResponse<Object>> activityNotFoundException(ActivityNotFoundException ex){
         ApiResponse<Object> response = ApiResponse.error(ex.getMessage(), HttpStatus.NOT_FOUND);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }

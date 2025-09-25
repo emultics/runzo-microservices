@@ -19,3 +19,18 @@ Preloaded with all 3 Postgres servers
 RedisInsight → http://localhost:9003
 
 Auto-connects to runzo-redis:6379
+
+
+# prune messages from kafka topic
+```declarative
+docker exec -it runzo-kafka kafka-topics \
+  --bootstrap-server localhost:9092 \
+  --delete --topic activity-events
+```
+
+# recreate topic
+```declarative
+docker exec -it runzo-kafka kafka-topics \
+--bootstrap-server localhost:9092 \
+--create --topic activity-events --partitions 3 --replication-factor 1
+```

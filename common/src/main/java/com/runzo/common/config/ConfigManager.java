@@ -1,11 +1,14 @@
 package com.runzo.common.config;
 
 import com.runzo.common.logger.AppLogger;
+import org.springframework.stereotype.Component;
+
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Component
 public class ConfigManager {
     private static final ConfigManager INSTANCE = new ConfigManager();
     private final Properties properties = new Properties();

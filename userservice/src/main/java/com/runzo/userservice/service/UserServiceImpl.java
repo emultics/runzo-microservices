@@ -58,5 +58,10 @@ class UserServiceImpl implements UserService {
         return userRepository.findByPhone(phone).orElseThrow(()-> new UserNotFoundException("User not found! with this phone: "+phone));
     }
 
+    @Override
+    public boolean isUserExist(String userId){
+        return userRepository.existsById(userId);
+    }
+
 
 }
