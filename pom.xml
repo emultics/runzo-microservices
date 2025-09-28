@@ -14,6 +14,8 @@
         <module>userservice</module>
         <module>activityservice</module>
         <module>aiservice</module>
+        <module>configserver</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
