@@ -1,13 +1,17 @@
 package com.runzo.aiservice.utils;
 
 import com.runzo.aiservice.dto.ActivityResponse;
+import com.runzo.common.logger.AppLogger;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 public class SmartPromptBuilder {
+    private static final AppLogger logger = AppLogger.getInstance(SmartPromptBuilder.class);
     private static final String PROMPT_TEMPLATE = """
         Analyze this fitness activity and provide detailed recommendations in the following EXACT JSON format:
         {
@@ -117,11 +121,15 @@ public class SmartPromptBuilder {
 
     private static double calculatePace(ActivityResponse activity){
         if(activity.getDistanceKm()==null || activity.getDistanceKm()==0) return 0.0;
+        logger.info("Getting duration: {}", activity.getDuration());
         return activity.getDuration()/activity.getDistanceKm();
     }
 
     private static double calculateCaloriesEfficiency(ActivityResponse activity){
         if(activity.getDistanceKm()==null || activity.getDistanceKm()==0) return 0.0;
+        logger.info("Getting Calories: {}", activity.getCalories());
+        logger.info("Getting Distance in Km: {}", activity.getDistanceKm());
+
         return activity.getCalories()/activity.getDistanceKm();
     }
 }

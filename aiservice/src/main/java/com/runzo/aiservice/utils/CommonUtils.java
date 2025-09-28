@@ -32,7 +32,12 @@ public class CommonUtils {
 
     private static RecommendationEndResponse.Analysis mapAnalysis(Recommendation.Analysis analysis) {
         if (analysis == null) return null;
-        return null;
+        return RecommendationEndResponse.Analysis.builder()
+                .pace(analysis.getPace())
+                .caloriesBurned(analysis.getCaloriesBurned())
+                .overall(analysis.getOverall())
+                .heartRate(analysis.getHeartRate())
+                .build();
     }
 
     private static List<RecommendationEndResponse.Improvement> mapImprovement(List<Recommendation.Improvement> improvement){
