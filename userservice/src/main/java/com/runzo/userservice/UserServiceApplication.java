@@ -3,8 +3,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
-@SpringBootApplication
-@Import(com.runzo.common.config.WebMvcAutoConfiguration.class)
+@SpringBootApplication(scanBasePackages = {
+        "com.runzo.userservice",
+        "com.runzo.common"
+})
 public class UserServiceApplication {
 
 	public static void main(String[] args) {

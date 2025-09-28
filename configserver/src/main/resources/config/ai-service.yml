@@ -1,0 +1,47 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      uri: mongodb://activityadmin:activitypass@localhost:27017/aiservicedb?authSource=admin
+
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: activity-service-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+            use:
+              type:
+                headers: false
+            # value:
+            #   default:
+            #     type: com.runzo.aiservice.dto.ActivityEvent
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+gemini:
+  api:
+    key: ${API_KEY}
+    url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+
+external:
+  activity-service:
+    baseurl: http://ACTIVITYSERVICE
+
+kafka:
+  topic:
+    name: activity-events
+
+server:
+  port: 8083

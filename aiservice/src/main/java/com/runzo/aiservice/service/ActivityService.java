@@ -40,6 +40,7 @@ public class ActivityService {
                     .block();
 
             if (apiResponse != null && apiResponse.isSuccess() && apiResponse.getData() != null) {
+                logger.info(apiResponse.toString());
                 return apiResponse.getData();
             } else {
                 logger.error("Error during API fetch: {}"+ (apiResponse != null ? apiResponse.getMessage() : "null response"));

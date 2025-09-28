@@ -33,9 +33,11 @@ public class ActivityAIService {
         List<ActivityResponse> activityHistory = activityService.getActivitiesByUser(activity.getUserId());
         logger.info("Collected Past activities for User {} : count {}", activity.getUserId(), activityHistory.size());
         logger.info("Generating Response .. ");
+
         String prompt = SmartPromptBuilder.createPrompt(activity, activityHistory);
         String response = geminiService.getRecommendations(prompt);
         logger.info("RESPONSE FROM MODEL: {}", response);
+
         return processResponseFromModel(activity, response);
     }
 
